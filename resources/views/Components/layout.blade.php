@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{asset('storage/tags/tagsinput.css')}}">
 </head>
 
 <body class="h-full">
@@ -88,14 +89,22 @@
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{$heading}}</h1>
             </div>
         </header>
+
         <main>
+            <div class="p-2 text-center"><x-search /></div>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-                <!-- Your content -->
                 {{$slot}}
             </div>
         </main>
     </div>
 
+
+    <script src="{{asset('storage/jquery/jquery-3.7.1.min.js')}}"></script>
+    <script src="{{asset('storage/tags/jquery.amsify.suggestags.js')}}"></script>
+
+    <script>
+        $('input[name="tag"]').amsifySuggestags();
+    </script>
 </body>
 
 </html>

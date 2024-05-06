@@ -23,6 +23,8 @@ class JobListFactory extends Factory
         $slug = Str::slug($title, '-');
         return [
             'title' => $title,
+            'employee_id' => 1,
+            'body_text' => $this->faker->realText(400),
             'slug' =>$slug,
             'salary' => $this->faker->numberBetween(1,1000000),
         ];
